@@ -11,8 +11,7 @@ function MainNavigation() {
             <Link to='/'>MeetUps</Link> {/*"use instead <a href"*/}
           </li>
           <li>
-            <Link to='/new-meetup'>Add New MeetUp</Link> 
-            
+            <Link to='/new-meetup'>Add New MeetUp</Link>
           </li>
           <li>
             <Link to='/best'>The Best</Link> 
