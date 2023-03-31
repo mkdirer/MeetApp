@@ -1,5 +1,18 @@
 .main {
-    margin: 3rem auto;
+    margin: 5rem auto;
+    /* padding: 2rem; */
     width: 90%;
     max-width: 40rem;
+    animation: slide-in 0.8s ease-out;
   }
+
+  @keyframes slide-in {
+    0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    }
+    100% {
+    transform: translateY(0);
+    opacity: 1;
+    }
+    }
