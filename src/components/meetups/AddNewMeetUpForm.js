@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import Tile from "../interface/Tile";
 import formClasses from "./AddNewMeetUpForm.module.css";
-function AddNewMeetUpForm() {
+
+function AddNewMeetUpForm(props) {
   const briefRef = useRef();
   const photoRef = useRef();
   const addressRef = useRef();
@@ -10,10 +11,6 @@ function AddNewMeetUpForm() {
     event.preventDefault();
 
     const submittedBrief = briefRef.current.value;
-    {
-      /*Please don't do that: briefRef.current.value = 'New value'; */
-    }
-
     const submittedPhoto = photoRef.current.value;
     const submittedAddress = addressRef.current.value;
     const submittedDescription = descriptionRef.current.value;
@@ -23,8 +20,10 @@ function AddNewMeetUpForm() {
         photo: submittedPhoto,
         address: submittedAddress,
         description: submittedDescription,
-        };
-        console.log(eventData); 
+    };
+    
+    props.collectedEventData(eventData);
+      
   }
 
   return (

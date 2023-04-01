@@ -1,7 +1,9 @@
+import {useState, useEffect} from 'react';
+
 import MeetUpContainer from '../components/meetups/MeetUpsContainer';
 
 
-const ALL_METTUPS  = [
+const MOCK_EVENTS  = [
   {
     id: 'city1',
     brief: 'First event',
@@ -22,9 +24,42 @@ const ALL_METTUPS  = [
   },
 ]; 
 function Meetups() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [lodedeEvents, setLoadedEvents] = useState([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch("https://react-event-app-1bcab-default-rtdb.europe-west1.firebasedatabase.app/event.json").then(response => {
+    return response.json();
+  }).then(data => {
+    setIsLoading(false);
+    setLoadedEvents(data);
+  });
+  }, [isLoading]);
+  
+  {
+    /*Dont use async and await */
+  }
+  fetch("https://react-event-app-1bcab-default-rtdb.europe-west1.firebasedatabase.app/event.json").then(response => {
+    return response.json();
+  }).then(data => {
+    setIsLoading(false);
+    setLoadedEvents(data);
+  });
+
+  if (isLoading)
+  {
+    return (
+      <section>
+        <p>Loading ...</p>
+      </section>
+    )
+  }
+
     return <section>
       <h1>My meetups</h1>
-      <MeetUpContainer event = {ALL_METTUPS} />
+      <MeetUpContainer event = {MOCK_EVENTS} />
+      <MeetUpContainer event = {setLoadedEvents} />
     </section>
   }
   
