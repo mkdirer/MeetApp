@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 
-import Meetups from "./view/MeetUps";
+import Events from "./view/Events";
 import Bests from "./view/Bests";
-import NewMeetup from "./view/NewMeetUp";
+import NewEvent from "./view/NewEvent";
 import Design from "./components/layaout/Design";
 
 function App() {
   return (
       <Design>
         <Routes>
-          <Route path="/" element={<Meetups />} exact/>
-          <Route path="/new-meetup" element={<NewMeetup />} />
+          <Route path="/" element={<Events />} exact/>
+          <Route path="/new-event" element={<NewEvent />} />
           <Route path="/best" element={<Bests />} />
         </Routes>
       </Design>

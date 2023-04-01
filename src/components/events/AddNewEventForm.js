@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import Tile from "../interface/Tile";
-import formClasses from "./AddNewMeetUpForm.module.css";
+import formClasses from "./AddNewEventForm.module.css";
 
-function AddNewMeetUpForm(props) {
+function AddNewEventForm(props) {
   const briefRef = useRef();
   const photoRef = useRef();
   const addressRef = useRef();
@@ -53,4 +53,4 @@ function AddNewMeetUpForm(props) {
   );
 }
 
-export default AddNewMeetUpForm;
+export default AddNewEventForm;

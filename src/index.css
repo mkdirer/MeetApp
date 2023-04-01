@@ -27,6 +27,12 @@ h2 {
   animation: fadeIn 1s ease-in-out;
 }
 
+p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #2c292b;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

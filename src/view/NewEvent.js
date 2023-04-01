@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import AddNewMeetUpForm from "../components/meetups/AddNewMeetUpForm";
+import AddNewEventForm from "../components/events/AddNewEventForm";
 
 
-function NewMeetup() {
+function NewEvent() {
 
   const navigate = useNavigate();
 
@@ -24,9 +24,9 @@ function NewMeetup() {
   return (
     <section>
       <h1>Create New Event</h1>
-      <AddNewMeetUpForm collectedEventData={addEventHendler} />
+      <AddNewEventForm collectedEventData={addEventHendler} />
     </section>
   );
 }
 
-export default NewMeetup;
+export default NewEvent;
