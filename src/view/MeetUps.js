@@ -32,20 +32,25 @@ function Meetups() {
     fetch("https://react-event-app-1bcab-default-rtdb.europe-west1.firebasedatabase.app/event.json").then(response => {
     return response.json();
   }).then(data => {
+    {
+      /*We have object not a data that why we need convert data form firebase*/ 
+    }
+    const events = [];
+
+    for(const key in data)
+    {
+      const event = {
+        id: key,
+        ...data[key]
+      };
+
+      events.push(event);
+    }
+
     setIsLoading(false);
     setLoadedEvents(data);
   });
   }, [isLoading]);
-  
-  {
-    /*Dont use async and await */
-  }
-  fetch("https://react-event-app-1bcab-default-rtdb.europe-west1.firebasedatabase.app/event.json").then(response => {
-    return response.json();
-  }).then(data => {
-    setIsLoading(false);
-    setLoadedEvents(data);
-  });
 
   if (isLoading)
   {
