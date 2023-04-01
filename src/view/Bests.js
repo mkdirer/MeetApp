@@ -1,5 +1,5 @@
 function Bests() {
-    return <div>All Bests Page</div>;
+    return <div>All Bests Event</div>;
   }
   
   export default Bests;
